@@ -1,0 +1,177 @@
+.r_top{
+	float: left;
+	padding-left: 5%;
+	width: 95%;
+	padding-top: 10px;
+}
+.r_top_t{
+	width: 100%;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #333;
+}
+.r_tj{
+	float: left;
+	width: 100%;
+}
+.r_tj span{
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+}
+.r_tj_t{
+	padding: 0 10px 0 20px;
+	font-size: 13px;
+	color: #666;
+}
+.r_tj_r{
+	font-size: 14px;
+	color: red;
+}
+.r_tj_dw{
+	padding-right: 5px;
+}
+/*日期*/
+.demoTwo ul li {
+    padding: 0 0 0 10px;
+    width: 180px;
+    color: #7db3ff;
+    height: 36px;
+    line-height: 36px;
+}
+.laydate-icon {
+    border: 1px solid #7db3ff;
+    background-image: url(icon.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+.yes{
+	width: 130px;
+	height: 40px;
+	background: #4772e2;
+	display: block;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+	margin-left: 20px;
+	border-radius: 5px;
+	cursor:pointer;
+}
+.boxTow{
+	float: left;
+	margin: 10px 0 0 20px;
+}
+.allp{
+	float: left;
+	display: block;
+	margin-left: 30px;
+	height: 40px;
+	line-height: 40px;
+	color: #5C5B57;
+	border-bottom: solid 1px #E4E4E4;
+}
+.nump{
+	font-size: 15px;
+	color: red;
+	padding: 0 5px;
+}
+.sh_list{
+	width: 95%;
+	padding-left: 5%;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-top: 15px;
+}
+.l_box{
+	float: left;
+	width: 95%;
+	margin-left: 5%;
+}
+.search{
+	float: left;
+}
+.sear{
+	width: 210px;
+	height: 33px;
+	border-radius: 5px;
+	border: solid 1px #E7E7E2;
+	float: left;
+	padding-left: 10px;
+}
+.sear_btn{
+	margin-left: 20px;
+	width: 110px;
+	height: 35px;
+	background: #4772e2;
+	display: block;
+	color: #fff;
+	line-height: 35px;
+	text-align: center;
+	float: left;
+	border-radius: 5px;
+	cursor:pointer;
+}
+.list_all{
+	margin-top: 15px;
+	width: 100%;
+	height: 500px;
+	float: left;
+}
+.tit_ul{
+	width: 100%;
+	display: flex;
+	border: solid 1px #ccc;
+}
+.l_list{
+	width: 100%;
+	display: flex;
+	border: solid 1px #ccc;
+}
+.tit_li{
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+	border-right: solid 1px #ccc;
+}
+.tit_li:nth-child(7){
+	flex: 3;
+	border-right: none;
+}
+.flexTwo{
+	flex: 2;
+}
+.flexThree{
+	flex: 3;
+}
+.l_list{
+	border-top: none;
+}
+.jiny{
+	cursor:pointer;
+	color: #3372f1;
+	border-bottom: solid 1px #3372f1;
+}
+.jief{
+	margin-left: 10px;
+	color: #4772e2;
+	border-bottom: solid 1px #4772e2;
+	cursor:pointer;
+}
+.rightbox{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+.page_xian{
+	position: absolute;
+	bottom:0;
+	right: 0;
+	margin-right: 50px;
+	margin-bottom: 180px;
+}

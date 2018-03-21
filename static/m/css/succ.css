@@ -1,0 +1,145 @@
+body {
+  background: #f9f8f4;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 1.25rem;
+  font-size: 0.65rem;
+  line-height: 1.25rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  text-align: center;
+  background: #fff;
+  z-index: 99;
+}
+.head_pos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.6rem;
+  height: 2rem;
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+  background-size: 0.425rem 1.25rem;
+  background-position: center;	
+}
+.box {
+  padding-top: 4.5rem;
+  width: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.img {
+  width: 2.325rem;
+  height: 2.45rem;
+  display: block;
+  background-image: url(../img/list_ucc.jpg);
+  background-size: 100% 100%;
+}
+.tj_fall{
+  background-image: url(../img/list_fall.jpg);
+}
+.img_pay {
+  width: 2.325rem;
+  height: 2.45rem;
+  display: block;
+  background-image: url(../img/chang_succ.jpg);
+  background-size: 100% 100%;
+}
+.statu {
+  height: 2.25rem;
+  line-height: 2.25rem;
+  font-size: 0.7rem;
+  color: #31302c;
+}
+.mess_stat {
+  color: #747371;
+  height: 0.75rem;
+  line-height: 0.75rem;
+  font-size: 0.58rem;
+}
+.btn {
+  padding-top: 2.5rem;
+  width: 16rem;
+}
+.btna {
+  width: 6rem;
+  height: 1.75rem;
+  border: 5px;
+  display: block;
+  float: left;
+  border-radius: 7px;
+  text-align: center;
+  line-height: 1.75rem;
+  font-size: 0.6rem;
+}
+.jixu {
+  color: #9b9a96;
+  border: solid 1px #9b9a96;
+  margin-left: 1.5rem;
+}
+.jixu:link {
+  color: #9b9a96;
+}
+.jixu:hover {
+  color: #9b9a96;
+}
+.jixu:visited {
+  color: #9b9a96;
+}
+.jixu:active {
+  color: #9b9a96;
+}
+.seelist {
+  color: #fff;
+  border: solid 1px #ff4e5e;
+  background: #ff4e5e;
+  margin-left: 0.875rem;
+}
+.seelist:link {
+  color: #fff;
+}
+.seelist:hover {
+  color: #fff;
+}
+.seelist:visited {
+  color: #fff;
+}
+.seelist:active {
+  color: #fff;
+}
+.golist{
+    width: 13rem!important;
+    background: #31d3b3!important;
+    color: #fff!important;	
+	border: none!important;
+}
+@media screen and (min-width:700px) and (max-width:3000px){
+	body{
+		background: #f1f1f1;
+	}
+	.father{
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		height: 736px;
+		overflow: hidden;
+		background: #f9f8f4;
+	}
+  .header,.title,header{
+  	left: 50%;
+  	margin-left: -8rem;
+	}
+	.footer,footer {
+  	left: 50%;
+  	margin-left: -8rem;
+  	top: 0;
+  	margin-top: 670px;
+	}
+}

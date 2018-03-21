@@ -1,0 +1,36 @@
+<div class="shadow"></div>
+<div class="box shw_addc">
+	<p class="title">修改信息</p>
+	<div class="form_d">
+		<span class="f_sp">姓名  :</span><input type="text" name="username" readonly="readonly" class="shu_inp name" value=""/>
+		<input type="hidden" name='id' class="ids">
+	</div>
+	<div class="form_d">
+		<span class="f_sp">编号  :</span><input type="text" name="number" class="shu_inp number" value=""/>
+	</div>
+	<div class="form_d">
+		<span class="f_sp">手机号码  :</span><input type="text" name="mobile"  class="shu_inp mobile" value=""/>
+	</div>
+	<div class="form_d">
+		<span class="f_sp">角色列表  :</span>
+		<input type="text" readonly="readonly" value=""  name="juese"  class="op_two juese" onclick="showul(this)"/>
+		<ul class="posi_ul jiaose" style="display: none;">
+			<!-- <li onclick="addInput(this);">店铺1-中关村创业园前后无色若翁无若若无阿萨阿克12号楼1单元1203室</li>
+			<li onclick="addInput(this);">店铺1-中关村创业园12号楼1单元1203室</li>
+			<li onclick="addInput(this);">店铺1-中关村创业园12号楼1单元1203室</li> -->
+		</ul>
+	</div>
+	<div class="form_d">
+		<span class="f_sp">店铺列表  :</span>
+		<input type="text" readonly="readonly" value="" name="addid" class="op_two addid" onclick="showul(this)"/>
+		<ul class="posi_ul dianpu" style="display: none;">
+			<!-- <li onclick="addInput(this);">hi爱无许错翁日</li>
+			<li onclick="addInput(this);">店铺1-中关村创业园12号楼1单元1203室</li>
+			<li onclick="addInput(this);">店铺1-中关村创业园12号楼1单元1203室</li> -->
+		</ul>
+	</div>
+	<div class="btn_b">
+		<span class="btn cancel" onclick="hides();">取消</span>
+		<span class="btn sure" onclick="hides();editUser()">确定</span>
+	</div>
+</div>

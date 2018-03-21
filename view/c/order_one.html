@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>系统统计</title>
+		<link rel="stylesheet" type="text/css" href="../../static/public/css/common.css"/>	
+		<link rel="stylesheet" type="text/css" href="../../static/c/css/c_order.css"/>	
+		<link rel="stylesheet" type="text/css" href="../../static/c/css/laydate.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/public/css/page.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/public/css/shadow.css" />
+	</head>
+	<body>
+		{include file="c/top.html"}
+		<div class="cont">
+			<div class="left">
+				<ul class="l_ul">
+					<li class="l_li"><span class="lisp"><a href="../../c/statis/show">用户管理</a></span><b class="clb clbhov"></b></li>
+					<li class="l_li"><span class="lisp lisp_hov">订单管理</span><b class="clb"></b></li>
+					<li class="l_li"><span class="lisp">系统管理</span><b class="clb"></b></li>
+				</ul>
+				<ul class="left_ul">
+					<li class="left_li leftli_hov">订单列表</a></li>
+					<li class="left_li"><a href="../../c/Address/shop">店铺列表</a></li>
+					<li class="left_li"><a href="../../c/Distill/distills">提货列表</a></li>
+					<!-- <li class="left_li " ></li> -->
+				</ul>
+			</div>
+			<div class="right">
+				<div class="rightbox">
+					<div class="top_tit paddingc">
+						<p class="top_p">时间  :</p>
+						<span class="top_t_s"onclick="getOrderList('day','','','',1)">当天</span>
+						<span class="top_t_s" onclick="getOrderList('week','','','',1)">最近7天</span>
+						<span class="top_t_s" onclick="getOrderList('month','','','',1)">最近一个月</span>
+					</div>
+					<div class="top_tit">
+						<p class="top_p">状态  :</p>
+						<span class="top_t_s" onclick="getOrderList('','10','','',1)">已提交</span>
+						<span class="top_t_s" onclick="getOrderList('','11','','',1)">已验机</span>
+					</div>
+					<div class="top_tit">
+						<p class="top_p">未成交时间  :</p>
+						<div class="demoTwo fl">
+							<ul class="inline clearfix">
+								<li class="inline laydate-icon fl" id="wstart" style="margin-right:10px;"></li>
+								<li class="inline laydate-icon fl" id="wend" ></li>
+							</ul>
+						</div>
+						<span class="sear_btn" onclick="getOrderList('','','wwc','',1)">搜索</span>
+					</div>
+					<div class="top_tit">
+						<p class="top_p">已成交时间  :</p>
+						<div class="demoTwo fl">
+							<ul class="inline clearfix">
+								<li class="inline laydate-icon fl" id="ystart" style="margin-right:10px;"></li>
+								<li class="inline laydate-icon fl" id="yend" ></li>
+							</ul>
+						</div>
+						<span class="sear_btn" onclick="getOrderList('','','ywc','',1)">搜索</span>
+					</div>
+				<p class="sh_list" onclick="toggfun();">显示 / 隐藏订单列表</p>
+				<div class="l_box" style="display:block">
+					<div class="search">
+						<input type="text" class="sear" placeholder="搜索" />
+						<span class="sear_btn" onclick="getOrderList('','','','',1);" >搜索</span>
+					</div>
+					<div class="list_all">
+						<!--标题各项-->
+						<ul class="tit_ul">
+							<li class="tit_li flexTwo">编号</li>
+							<li class="tit_li flexThree">订单编号</li>
+							<li class="tit_li flexThree">订单名称</li>
+							<li class="tit_li flexTwo">手机号码</li>
+							<li class="tit_li flexTwo">处理人</li>
+							<li class="tit_li flexThree">门店地址</li>
+							<li class="tit_li flexTwo">成交价格</li>
+							<li class="tit_li flexTwo">成交时间</li>
+							<li class="tit_li flexTwo">订单状态</li>
+							<li class="tit_li flexThree">操作</li>
+						</ul>
+						<!--每列信息都为一个ul-->
+						<div class="mess_box">
+							<ul class="l_list">
+							</ul>
+						</div>
+					</div>
+					<!-- 总共多少条 -->
+					<input type="hidden" class="count_page" value="">
+					<!-- 总共多少页 -->
+					<input type="hidden" class="page" value="">
+					<!-- 下一页 -->
+					<input type="hidden" class='next_page'>
+					<div class="page_xian" style="display:none">
+					{include file="c/page.html"}
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="ruku" style='display:none'>
+		{include file="c/bank_shadow.html"}
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/public/js/public.js"></script>	
+	<script src="../../static/public/js/paging.js"></script>
+	<script src="../../static/public/js/shadow.js"></script>
+	<script src="../../static/c/js/show.js"></script>
+	<script src="../../static/c/js/laydate.js"></script>
+	<script src="../../static/c/ajax/request_order.js"></script>	
+	<script>
+		loadFun();
+		//日期范围限制
+		datafun();
+	</script>
+</html>

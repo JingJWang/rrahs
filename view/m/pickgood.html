@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>提货请求</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/earnlist.css?v=20171012" />
+	</head>
+	<body>
+		<header>
+			<span class="head_span">提货信息</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a><!--javascript:history.go(-1);-->
+		</header>
+		{if $list neq 0}
+		<div class="tih martop">
+			<ul class="mess">
+				<li class="mess_li">
+					<p class="li_mess">
+						<span class="li_tit">提货编号</span>
+						<span class="li_cont">{$list.distill_id}</span>
+					</p>
+					<p class="li_mess">
+						<span class="li_tit">提货人</span>
+						<span class="li_cont">{$list.manage_name}</span>
+					</p>
+					<p class="li_mess">
+						<span class="li_tit">当前状态</span>
+						<span class="li_cont stat_mess">{$list.distill_deed}</span>
+					</p>
+					<p class="li_mess">
+						<span class="li_tit">提货数量</span>
+						<span class="li_cont">{$list.num}<b>台</b></span>
+					</p>
+				</li>
+			</ul>
+			<h1 class="messlist">详细列表</h1>
+			<ul class="cont">
+			{if $order neq 0}
+				{foreach $order as $key=>$val}
+				<li class="c_li">
+					<span class="li_cp"></span>
+					<span class="li_cp">{$val.order_name}</span>
+					<span class="li_cp">{$val.ordre_dealtime}</span>
+					<span class="li_cp">{$val.manage_name}</span>
+				</li>
+				{/foreach}
+		    {/if}
+			</ul>
+			{if $primit eq 1}
+			<div class="th_btn">
+				<a href="javascript:;" onclick="updateDistill({$list.distill_id});" class="btn_a">取消</a>
+				<a href="javascript:;" onclick="updateDistill({$list.distill_id});" class="btn_a sure">确认</a>
+			</div>
+			{/if}
+		</div>
+		{/if}
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/request_dislist.js"></script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/order.css?v=20171013" />
+	</head>
+	<body>
+		<div class="father">
+		<header>
+			<span class="head_span">订单查询</span>
+			<!--<a href="javascript:history.go(-1);" class="head_pos"></a>-->
+		</header>
+		<!-- <div class="user">
+			<img src="" class="photo"/>
+			<span class="user_name">静静静静静</span>
+		</div> -->
+		<div class="list_title">
+			<span class="myLfont">我的订单</span>
+			<!--<a href="list.html" class="myafont">全部订单</a>-->
+		</div>
+		<div class="list_box">
+		{if $result !=''}
+			{foreach $result as $key=>$val}
+				<div class="list fl">
+					<a class="mobile fl" href="getOrderDetail?id={$val.id}">
+						<span class="m_name">{$val.orderName}</span>
+						<span class="m_ts">
+							{if $val.dealStatus eq 1 && $val.confirm neq -1}
+								门店待检测
+							{else if $val.dealStatus eq 1 && $val.confirm eq -1}
+								用户待确认
+							{else if $val.dealStatus eq 10}
+								已成交
+							{else if $val.dealStatus eq 0}
+								已取消
+							{/if}
+							</span>
+						<div class="pg_p">
+							<span class="pr_font">评估价格：</span>
+							<span class="price">￥{$val.orderPric/100}</span>
+						</div>
+					</a>
+					<span class="timer fl">{$val.joinTime|date_format:'%Y-%m-%d %H:%M:%S'}</span>
+				</div>
+			{/foreach}
+		{else}
+			<div class="nolist">暂无订单信息...</div>
+		{/if}
+		</div>
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js?v=10010"></script>
+</html>

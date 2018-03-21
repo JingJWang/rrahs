@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>订单列表</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/earnlist.css?v=20171012" />
+	</head>
+	<body>
+		<header>
+			<span class="head_span">收益列表</span>
+			<a href="javascript:;" class="head_pos"></a><!--javascript:history.go(-1);-->
+		</header>
+		<div class="tit marTop">
+			<p class="tit_con">员工姓名：<b class="userName">{$user.name|default:""}</b></p>
+			<p class="tit_con">员工编号：<b class="listNum">{$user.number|default:""}</b></p>
+			{if $QRcode eq 1}
+			<a href="http://m.rrahs.com/m/user/createQRcode" class="tit_con">我的二维码</b></p>
+			{/if}
+			<a href="extractInfoList" class="pos_se thp">查看提货请求</a>
+			<a href="userSettlement" class="pos_se yjp">查看我的业绩</a>
+		</div>		
+		<ul class="list_nav">
+			<li class="unfin {if $status eq unfinished}addNav{/if} wfin"><a href="orderSee?status=unfinished">未完成订单</a></li>
+			<li class="fin {if $status eq deal}addNav{/if} yfin"><a href="orderSee?status=deal">已完成订单</a></li>
+		</ul>
+		<!--所有订单-->
+		<div class="list">
+		   {if $status eq unfinished}
+		   		{if $unfinished neq ""}
+					{foreach $unfinished as $k=>$v}
+						<!--未完成订单-->
+						<a href="getOrderDetail?id={$v.gid}">
+						<div class="unfin wcon listTab">
+							<div class="unfinsh" >	
+								
+									<div class="phone">
+										<p class="p_phone list_p">{$v.orderName}</p>
+										<p class="p_tit">订单名称</p>
+									</div>
+									<div class="money">
+										<p class="p_money list_p">￥{$v.orderPric/100}</p>
+										<p class="p_tit">报价金额</p>
+									</div>
+									<div class="ratio">
+										<p class="p_money list_p">{$state[$v.dealStatus]}</p>
+										<p class="p_tit">订单状态</p>
+									</div>
+							</div>
+						</div></a>
+					{/foreach}
+				  {else}
+				  	<div class="nolist">暂无此类订单...</div>
+				  {/if}
+		 {/if}
+		  {if $status eq deal}
+				{if $deal neq ""}
+					{foreach $deal as $key=>$val}
+						<p class="f_time">{$key}月份</p>
+						{foreach $val as $k=>$v}
+								<a href="getOrderDetail?id={$v.gid}">
+								<div class="finCont">
+									<span class="timer">{$v.joinTime|date_format:'%m.%d %H:%M'}</span>
+									<div class="finMess">
+										<div class="f_phone">
+											<p class="list_p">{$v.orderName}</p>
+											<p class="p_tit">订单名称</p>
+										</div>
+										<div class="f_money">
+											<p class="list_p">￥{$v.orderPric/100}</p>
+											<p class="p_tit">成交金额</p>
+										</div>
+										<div class="f_tc">
+											<p class="list_p">{$v.dealtime|date_format:'%m/%d'}</p>
+											<p class="p_tit">成交时间</p>
+										</div>
+										<div class="f_ratio">
+											<p class="list_p">{$v.manage_name}</p>
+											<p class="p_tit">处理人</p>
+										</div>
+									</div>
+								 </div>
+								 </a>
+						{/foreach}
+					{/foreach}
+				{else}
+					<!--没有订单显示-->
+					<div class="nolist">暂无此类订单...</div>
+				{/if}
+		 {/if}
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script>
+		function tab(obj){
+			var i = $(obj).index();//下标第一种写法
+			$(obj).addClass('addNav').siblings().removeClass('addNav');
+			$('.list .listTab').eq(i).show().siblings().hide();
+		}
+	</script>
+</html>

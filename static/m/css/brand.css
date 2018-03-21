@@ -1,0 +1,201 @@
+body {
+  background: #fff;
+}
+.father{
+	position: relative;
+	background: #f9f8f4;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+}
+.header {
+	width: 16rem;
+  height: 60px;
+  background: #fff;
+  position: relative;
+  float: left;
+}
+.head_inp {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 0.5rem;
+  margin-bottom: 10px;
+  margin-left: 1.925rem;
+  width: 9rem;
+  height: 40px;
+  padding-left: 1.75rem;
+  background: #f9f8f4;
+  color: #aeada9;
+  font-size: 0.5rem;
+  border-radius: 5px;
+  background-image: url(../img/ss_img.png);
+  background-repeat: no-repeat;
+  background-size: 0.7rem 0.625rem;
+  background-position: 0.6rem center;
+}
+.h_user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.6rem;
+  height: 60px;
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+  background-size: 0.44rem 1.4rem;
+  background-position: center;
+}
+.Bth{
+    display: inline-block;
+    width: 2.2rem;
+    height: 40px;
+    text-align: center;
+    font-size: 0.55rem;
+    color: #676767;
+    line-height: 35px;
+    border: solid #dadada 1px;
+    border-radius: 5px;
+    background: #fff;
+}
+.jies {
+  width: 16rem;
+  height: 50px;
+  background: #f5f5f5;
+  float: left;
+}
+.jsSpan {
+  text-align: center;
+  display: block;
+  font-size: 0.625rem;
+  line-height: 50px;
+  height: 49px;
+  color: #3c3c3c;
+  float: left;
+}
+.js_name {
+  width: 3.75rem;
+}
+.js_moblie {
+  width: 12.25rem;
+  border-bottom: solid 1px #e4e4e4;
+}
+.mobile {
+  width: 100%;
+  padding-top: 110px;
+}
+.left {
+  width: 3.75rem;
+  background: #fff;
+}
+.right {
+  width: 12.25rem;
+}
+.mobSty {
+  height: 100%;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  float: left;
+}
+.mob {
+	position: relative;
+	overflow: hidden;	
+  width: 3.85rem;
+  height: 2.9rem;
+  background: #fff;
+  display: block;
+  float: left;
+  text-align: center;
+  color: #6a6a6a;
+  font-size: 0.57rem;
+}
+.mobSty a img {
+    width: 2.2rem;
+    height: 2.06rem;
+    margin: 0 auto;
+}
+.f_name{
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 0.2rem;
+}
+.mbChane {
+  background: #30d3b6;
+  color: #fff;
+}
+.rig {
+  width: 95%;
+  height: 2.9rem;
+  line-height: 2.9rem;
+  color: #6d6d6d;
+  border-bottom: solid 1px #e2e2e2;
+  display: block;
+  float: left;
+  font-size: 0.57rem;
+  background-image: url(../img/mobrig_bg.png);
+  background-repeat: no-repeat;
+  background-size: 0.45rem 0.55rem;
+  background-position: 11rem center;
+  padding-left: 5%;
+}
+.rig:last-of-type {
+  border-bottom: none;
+}
+.rig:link {
+  color: #6d6d6d;
+}
+.rig:hover {
+  color: #6d6d6d;
+}
+.rig:active {
+  color: #6d6d6d;
+}
+.rig:visited {
+  color: #6d6d6d;
+}
+.left::-webkit-scrollbar {
+    display: none;
+}
+.right::-webkit-scrollbar {
+    display: none;
+}
+.r_box{
+	width: 100%;
+}
+.mo {
+  width: 100%;
+  margin-top: 60px;
+}
+.changbg{
+	height: 2rem;
+	line-height: 2rem;
+	background-image: url(../img/a_back.jpg);
+	background-size: 0.55rem 0.55rem;
+	background-position: 14.3rem center;
+	background-color: #fff;
+}
+.changbg:first-of-type{
+	margin-top: 0.2rem;
+}
+@media screen and (min-width:700px) and (max-width:3000px){
+	.father{
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background: #f9f8f4;
+		height: 736px;
+	}
+  header {
+	  position: absolute;
+	}
+	.mobile{
+		height: 626px !important;
+	}
+}

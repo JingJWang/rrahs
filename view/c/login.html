@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>收多多系统-管理登录</title>
+		<link rel="stylesheet" type="text/css" href="../../static/m/css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/c/css/login.css"/>
+	</head>
+	<body>
+		<header></header>
+		<div class="cont">
+			<input type="text" class="username inp" id="user"  placeholder="请输入您的用户名"/>
+			<input type="password" class="password inp" id="pwd"   placeholder="请输入您的密码"/>
+			<div class="yzm">
+				<input type="text" class="password inp" id="check" placeholder="随机验证码"/>
+				<img src="/codeimg/code_char.php" width="80" class="yzm_img" onclick="this.src='/codeimg/code_char.php?name=2&d='+Math.random();" alt="">
+			</div>
+			<!--  <label class="rember"><input name="rember" type="checkbox" value="" /><span>记住我</span></label>-->
+			<label class="rember"></label>
+			<button class="login" onclick="login.login();">登 录</button>
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/c/js/init.js"></script>
+	<script src="../../static/c/js/request_login.js"></script>
+</html>

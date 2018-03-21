@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>我的业绩</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/earnlist.css?v=20171012" />
+	</head>
+	<body>
+		<header>
+			<span class="head_span">我的业绩</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a><!--javascript:history.go(-1);-->
+		</header>
+		<div class="per">
+			<span class="per_tit">当月业绩结算 : </span>
+			<p class="all_per">全部 : <span class="all_per_p">{$total}</span>元</p>
+			<p class="all_per">提成 : <span class="tc_per_p">{$commission}</span>元</p>
+		</div>
+		<div class="poi_time">
+			<p class="pos_t">
+				<!--<a class="sp_time h_bottom" href="userSettlement">2018年</a>-->
+				<a class="sp_time h_bottom" href="userSettlement{$url}">2017年</a>
+			</p>
+			<p class="pos_t">
+				<a class="sp_time h_bottom" href="userSettlement{$url}">12月份</a>
+			</p>
+		</div>
+		<h1 class="messlist marbottom">结算详细列表</h1>
+		<ul class="tih">
+			<!--每一天为一个li-->
+			{foreach  $list as $key=>$val}
+			<li class="tih_li">
+				<span class="time">{$key}</span>
+				<!--所有订单标题-->
+				<p class="tih_tit">
+					<span class="tih_cp">订单编号</span>
+					<span class="tih_cp">订单名称</span>
+					<span class="tih_cp">成交金额</span>
+					<span class="tih_cp">处理人</span><!--处理人--店长-->
+				</p>
+				<div class="tih_mess">
+					<!--当天所有订单-->
+					{foreach $val as $k=>$v}
+					<p class="tih_p">
+						<span class="tih_cp">{$v.order_number}</span>
+						<span class="tih_cp">{$v.order_name}</span>
+						<span class="tih_cp">{$v.order_bid_price}</span>
+						<span class="tih_cp">{$v.manage_name}</span><!--处理人--店长-->
+					</p>
+					{/foreach}
+					<!--  <p class="tih_p">
+						<span class="tih_cp">24464</span>
+						<span class="tih_cp">iphone 6s plus</span>
+						<span class="tih_cp">658</span>
+						<span class="tih_cp">店长1</span>
+					</p>-->
+				</div>
+			</li>
+			{/foreach}
+			<!--每一天为一个li
+			<li class="tih_li">
+				<span class="time">2017/11/12</span>
+				<div class="tih_mess">
+					<p class="tih_p">
+						<span class="nohlist">无业绩</span>
+					</p>
+				</div>
+			</li>-->
+			<!--每一天为一个li
+			<li class="tih_li">
+				<span class="time">2017/11/12</span>
+				
+				<p class="tih_tit">
+					<span class="tih_cp">订单编号</span>
+					<span class="tih_cp">订单名称</span>
+					<span class="tih_cp">成交金额</span>
+					<span class="tih_cp">处理人</span>
+				</p>
+				<div class="tih_mess">
+					
+					<p class="tih_p">
+						<span class="tih_cp">1115</span>
+						<span class="tih_cp">iphone 6s plus</span>
+						<span class="tih_cp">2000</span>
+						<span class="tih_cp">店长1</span>
+					</p>
+					<p class="tih_p">
+						<span class="tih_cp">221654</span>
+						<span class="tih_cp">iphone 6s plus</span>
+						<span class="tih_cp">1500</span>
+						<span class="tih_cp">店长1</span>
+					</p>
+				</div>
+			</li>-->
+		</ul>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+</html>

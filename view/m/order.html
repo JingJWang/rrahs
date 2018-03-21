@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../../static/m/css/public.css" />
+		<link rel="stylesheet" href="../../static/m/css/order.css?v=20170927" />
+		<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	</head>
+	<body>
+		<div class="father">
+		<header>
+			<span class="head_span">{$result.gname}</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a>
+		</header>
+		<div class="yh fl">
+			<a class="mobile fl mobile_list">
+				<span class="m_name">{$result.gname}</span>
+				<span class="m_ts">
+					{$status[$result.orderstatus]}
+				</span>
+				<div class="pg_p">
+					<span class="pr_font">评估价格：</span>
+					<span class="price">{$result.price/100}</span>
+				</div>
+			</a>
+			<span class="time fl">{$result.jtime|date_format:'%Y-%m-%d %H:%M:%S'}</span>
+		</div>
+		<div class="relady fl">
+			<span class="tit">已选择的交易网点</span>
+			<div class="rel">
+				<p class="wd_name">{$result.numaddr}</p>
+				<!-- <p class="address">北京市丰台区马家堡西路</p> -->
+			</div>
+		</div>
+		<div class="mobiled fl">
+			<span class="mob_font">手机现状</span>
+			{if $role eq $role_Clerk && $result.orderstatus eq 1}
+				<a class="choose" {if $result.orderstatus eq 0  || $result.orderstatus eq 10}style="display:none;"{/if} href='getOrderOne?oid={$oid}'>重新选择</a>
+			{/if}
+			<input type="hidden" name="text" value="{$result.text}">
+			<input type="hidden" name="cid" value="{$result.cid}">
+		</div>
+		<div class="nowstat_div fl">
+			<div class="nowstat fl">
+				{foreach $vdata as $key=>$val}
+				<span class="statu">{$val}</span>
+				{/foreach}
+			</div>
+		</div>
+		{if $role eq $role_customer}
+		<div class="inform padbtninp fl">
+			<div class="addinp_f">
+				<span>姓名：</span>
+				<span>{$account.0}</span>
+			</div>
+			<div class="addinp_f">
+				<span>开户行：</span>
+				<span>{$account.1}</span>
+			</div>
+			<div class="addinp_f">
+				<span>银行卡号：</span>
+				<span>{$account.2}</span>
+			</div>
+		</div>
+		{/if}
+		<!--按钮-->
+		{if $role !=false && $role eq $role_Clerk && $result.orderstatus eq 1}
+		<footer {if $result.orderstatus eq 0 || $result.orderstatus eq 10}style="display:none;"{/if}>
+			<a href="javascript:;" onclick="cusDeal({$oid})" class="sure f_btn" >确认</a>
+			<a href="javascript:;" onclick="cancles({$oid})" class="cancel f_btn">取消</a>
+		</footer>
+		{/if}
+		<!--弹框-->
+		{if $result.orderstatus eq 2 && $result.confirm eq -1 &&  $role eq 10}
+		<div class="shadow"></div>
+		<div class="change">
+			<p class="title">改价通知</p>
+			<span class="dw_num">订单编号:</span><span class="num">{$result.number}</span><br />
+			<span class="dw_num">订单名称:</span><span class="adress">{$result.gname}</span><br />
+			<div class="chMoney">
+			修改后报价为：<b class="money">{$result.price/100}</b>	
+			</div>
+			<div class="commit">
+				<a href="javascript:;" class="cancelb combtn" onclick="useCancle();">取消订单</a>
+				<a href="javascript:;" class="sureb combtn" onclick="yesOrder({$oid})" >确认报价</a>
+				<b class="pos_soild"></b>
+			</div>
+		</div>
+		{/if}
+		</div>
+	</body>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script src="../../static/m/js/request_order.js?v=20171028"></script>
+	<script>
+	{literal}  
+		var widHei = $(window).height();
+		$('.shadow').css({'height':widHei,'z-index':'99'});
+	{/literal} 
+		function changes(){
+		    var card = $('#J_BankCard').val();
+		    card = card.replace(/\D/g,'');
+		    var ncard='';
+		    for(var n=0;n<card.length;n=n+4){
+		        ncard += card.substring(n,n+4)+" ";
+		    }
+		    $('#J_BankCard').val(ncard.replace(/(\s*$)/g,""));
+		}
+	</script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>系统统计</title>
+		<link rel="stylesheet" type="text/css" href="../../static/public/css/common.css"/>	
+		<link rel="stylesheet" type="text/css" href="../../static/c/css/cont.css"/>	
+		<link rel="stylesheet" type="text/css" href="../../static/c/css/laydate.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/public/css/page.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/public/css/shadow.css" />
+	</head>
+	<body>
+		{include file="c/top.html"}
+		<div class="cont">
+			<div class="left">
+				<ul class="l_ul">
+					<li class="l_li"><span class="lisp lisp_hov">用户管理</span><b class="clb clbhov"></b></li>
+					<li class="l_li"><span class="lisp"><a href="../../c/Order/user">订单管理</a></span><b class="clb"></b></li>
+					<li class="l_li"><span class="lisp">系统管理</span><b class="clb"></b></li>
+				</ul>
+				<ul class="left_ul">
+					<li class="left_li"><a href="show">普通用户</a></li>
+					<li class="left_li leftli_hov" >系统用户</li>
+				</ul>
+			</div>
+			<div class="right">
+				<div class="rightbox">
+				<div class="r_top">
+					 <span class="r_top_t">系统会员注册统计</span>
+					<!-- <div class="r_tj">
+						<span class="r_tj_t" onclick="getAllUser('day',type=1);">今天 :</span>
+						<span class="r_tj_r"></span>
+						<span class="r_tj_dw">人</span>
+						<span class="r_tj_t" onclick="getAllUser('week',type=1);">近一周:</span>
+						<span class="r_tj_r"></span>
+						<span class="r_tj_dw">人</span>
+						<span class="r_tj_t" onclick="getAllUser('month',type=1);">近一月:</span>
+						<span class="r_tj_r"></span>
+						<span class="r_tj_dw">人</span>
+					</div>  -->
+					<div class="boxTow clearfix">
+						<div class="demoTwo fl">
+							<ul class="inline clearfix">
+								<li class="inline laydate-icon fl" id="start" style="margin-right:10px;">2017-12-05</li>
+								<li class="inline laydate-icon fl" id="end" >2017-12-25</li>
+							</ul>
+						</div>
+						<span href="javascript:;" class="yes"  onclick="getAllUser('',type=2);">查询</span>
+						<!-- <p class="allp"><span class="nump">3000</span>人</p> -->
+					</div>
+				</div> 
+				<p class="sh_list" onclick="toggfun();">显示 / 隐藏订单列表</p>
+				<div class="l_box" style="display:block">
+					<div class="search">
+						<input type="text" class="sear" placeholder="搜索" />
+						<span class="sear_btn" onclick="getAllUser('',type=3);" >搜索</span>
+					</div>
+					<div class="list_all">
+						<!--标题各项-->
+						<ul class="tit_ul">
+							<li class="tit_li flexTwo">编号</li>
+							<li class="tit_li flexThree">openid</li>
+							<li class="tit_li flexTwo">手机号码</li>
+							<li class="tit_li flexTwo">昵称</li>
+							<li class="tit_li flexThree">注册时间</li>
+							<li class="tit_li flexTwo">当前状态</li>
+							<li class="tit_li flexThree">操作</li>
+						</ul>
+						<!--每列信息都为一个ul-->
+						<div class="mess_box">
+							<ul class="l_list">
+							</ul>
+						</div>
+					</div>
+					<!-- 总共多少条 -->
+					<input type="hidden" class="count_page" value="">
+					<!-- 总共多少页 -->
+					<input type="hidden" class="page" value="">
+					<!-- 下一页 -->
+					<input type="hidden" class='next_page'>
+					<div class="page_xian" style="display:none">
+					{include file="c/page.html"}
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class='shadows' style="display:none">
+			{include file="c/shadow.html"}
+		</div>
+		<div class='edituser' style="display:none">
+			{include file="c/cd_shadow.html"}
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/public/js/public.js"></script>	
+	<script src="../../static/public/js/paging.js"></script>
+	<script src="../../static/public/js/shadow.js"></script>
+	<script src="../../static/c/js/show.js"></script>
+	<script src="../../static/c/js/laydate.js"></script>
+	<script src="../../static/c/ajax/request_user.js"></script>	
+	<script>
+		loadFun();
+		//日期范围限制
+		datafun();
+	</script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/classify.css?v=20171012" />
+	</head>
+	<body style="background-color: #f9f8f4">
+		<div class="fath_t">
+			<header>
+				<span class="h_span_off">{$name}</span>
+				<a href="javascript:history.go(-1);" class="head_pos"></a>
+			</header>
+		<form id="order" action="listSucc" method="post">
+			<div class="offer">
+				<span class="of_sp">评估价格</span>
+				<span class="of_price">{$pri}</span>
+				<input type="hidden" name="price" class="price" value="{$pri}">
+			</div>
+			<div class="informat firstin mar_btn" id="role" >
+				<div class="inf_n">
+					<span>网点编号：</span>
+					<input type="text" name="inp" class="wd_inp inf_inp"  placeholder="请输入网点编号" value="SDD000002"/>
+				</div>
+				<div class="inf_n">
+					<span>姓名：</span>
+					<input type="text" name="username" class="wd_inp inf_inp"  id="username" placeholder="请输入银行卡账户姓名" value="测试姓名"/>
+				</div>
+				<div class="inf_n">
+					<span>开户行：</span>
+					<input type="text" name="bankname" class="wd_inp inf_inp"  id="bankname" placeholder="请输入银行卡开户行" value="工商银行"/>
+				</div> 
+				<div class="inf_n">
+					<span>银行卡号：</span>
+					<input type="text" name="banknumber" class="wd_inp inf_inp " id="banknumber"  placeholder="请输入银行卡卡号" value="622222222222222"/>
+				</div>
+			</div>
+			<div class="mobile">
+				<span class="mob_font">手机现状</span>
+				<a href="javascript:history.go(-1);" class="choose">重新选择</a>
+			</div>
+			<div class="save">
+			{foreach $vals as $key=>$val}
+				<input readonly="true" onfocus="this.blur()" class=" seeOff a_{$key}" name="a_{$key}" value="{$val}">
+			{/foreach}
+			</div>
+			<div class="xq">
+				<span class="xq_cont">交易担保</span>
+				<span class="xq_cont">快速收款</span>
+				<span class="xq_cont">隐私清除</span>
+			</div>
+			<!-- 当前用户角色 手机id 用户id 手机名字 -->			
+			<input type="hidden" name="phoneid" class="phoneid" value="{$id}">
+			<input type="hidden" name="phonename" class="phonename" value="{$name}">
+			<footer>
+				<input type="button" class="foot_a" onclick="checkFormAll();" value="立即回收" />
+			</footer>
+		</form>
+			<!--弹框-->
+			<div class="pos_tk" style="display:none">
+				<div class="centerpos">
+					<h1 class="centh1">信息填写</h1>
+					<div class="cen_inp">
+						<span>图形验证码：</span>
+						<input type="text" class="inf_txyzm inf_inp cenwinp" name="inf_txyzm" id="imgcode" value="" placeholder="请输入图形验证码"/>
+						<div class="txmcen">
+							<img src="/codeimg/code_char.php" width="80"  onclick="this.src='/codeimg/code_char.php?name=2&d='+Math.random();" alt="">
+						</div>
+					</div>
+					<div class="cen_inp">
+						<span>手机号码：</span>
+						<input type="text" name="inf_phonew" value="" class="inf_phonew inf_inp cenwinp" placeholder="" oninput="changeColor(this);"/>
+						<input class="posi_font_yzm hqcen" value="获取验证码" readonly/>
+					</div>
+					<div class="cen_inp">
+						<span>手机验证码：</span>
+						<input type="text" name="inf_yhyzm" class="inf_yzm inf_inp cenyzm" placeholder="请输入手机验证码" />
+					</div>
+					<div class="posbot">
+						<span class="cen_sure cbtn" onclick="hideshadow();">确定</span>
+						<span class="cen_cancel cbtn" onclick="cancleRegis()">取消</span>
+						<b class="poi_csh"></b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js?v=2017110602"></script>
+	<script src="../../static/m/js/request_offer.js?v=2017110605"></script>
+	<script>
+	/*var res=rrwx.getCode();
+		 if(res = true || res.status != 10010){
+			alert('登录出现异常!');
+		} */
+		loadhei();
+	</script>
+</html>

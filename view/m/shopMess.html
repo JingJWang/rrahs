@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>店铺详情</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/directorlist.css?v=20171012" />
+	</head>
+	<body>
+		<header>
+			<span class="head_span">店铺详情</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a><!--javascript:history.go(-1);-->
+		</header>
+		<!--订单名称  成交时间    处理人   订单状态-->
+		<div class="sjop_tit martop">
+			<span class="shop_mess">订单名称</span>
+			<span class="shop_mess">成交时间</span>
+			<span class="shop_mess">处理人</span>
+			<span class="shop_mess">订单状态</span>
+		</div>
+		<ul class="shop_list">
+		{if $list neq 0}
+		{foreach $list as $key=>$val}
+			<li class="sjop_tit" onclick="addth(this,{$val.order_id})" data="{$val.order_id}">
+				<span class="shop_mess">{$val.order_name}</span>
+				<span class="shop_mess">{$val.ordre_dealtime}</span>
+				<span class="shop_mess">{$val.manage_name}</span>
+				<span class="shop_mess">{$val.order_orderstatus}</span>
+				<span class="radio_sp "></span>
+			</li>	
+		{/foreach}
+		{/if}
+		</ul>
+		<input type="hidden" name="package" id="package" value="">
+		<div class="footer">
+			<span class="qx" onclick="changeAll(this);">全选</span>
+			<span class="last_btn" onclick="extractList();">提货</span>
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script src="../../static/m/js/shopmess.js"></script>
+</html>

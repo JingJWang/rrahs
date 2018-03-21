@@ -1,0 +1,48 @@
+body{
+	width: 100%;
+	height: 100%;
+}
+.box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.abbg{
+	background-color: #97c71d;
+}
+.about{
+	background-image: url(../img/about.jpg);
+	background-size: 16rem 22.5rem;
+	background-repeat: no-repeat;
+}
+.adv{
+	width: 16rem;
+}
+.advImg{
+	width: 16rem;
+	height: 22.5rem;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.advImg:nth-child(1){
+	background-image: url(../img/adv1.jpg);
+}
+.advImg:nth-child(2){
+	background-image: url(../img/adv2.jpg);
+}
+.advImg:nth-child(3){
+	background-image: url(../img/adv3.jpg);
+}
+.advImg:nth-child(4){
+	background-image: url(../img/adv4.jpg);
+}
+.renew{
+	background-image: url(../img/huanxin.jpg);
+	background-size: 16rem 22.5rem;
+	background-repeat: no-repeat;
+}
+.rebg{
+	background-color: #cbb4a6;
+}

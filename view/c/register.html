@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>收多多后台系统注册</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css"/>
+		<link rel="stylesheet" href="../../static/c/css/login_m.css" />
+	</head>
+	<body>
+		<header></header>
+		<p class="tit">收多多后台系统注册</p>
+		<form id="register" action="#" method="post">
+		<div class="inpB">
+			<span class="inp_tit">姓名：</span>
+			<input type="text" name="name" class="inp" placeholder="请输入您的姓名" onblur="checkName(this);"/>
+		</div>
+		<div class="inpB">
+			<span class="inp_tit">手机号码：</span>
+			<input type="text" name="phone" class="inp" placeholder="请输入您的手机号码" onblur="testMoblie(this);"/>
+		</div>
+		<!--<div class="inpB">
+			<span class="inp_tit">验证码：</span>
+			<input type="text" class="inp" placeholder="请输入验证码"/>
+		</div>-->
+		<div class="inpB">
+			<span class="inp_tit moreW">图形验证码：</span>
+			<input type="text" name="code" class="inp" placeholder="请输入图形验证码"/>
+			<span class="img_yam"><img src="/codeimg/code_char.php" width="80" class="yzm_img" onclick="this.src='/codeimg/code_char.php?name=2&amp;d='+Math.random();" alt=""></span>
+		</div>
+		<input type="hidden" name="wxcode" value="{$wxcode}"/> 
+		<p class="redp"></p>
+		<footer onclick="register();">提示</footer>
+		</form>
+		<!--遮罩-->
+		<div class="shadow" style="display:none">
+			<div class="shad">
+				<span class="ewm"></span>
+				<p class="sha_p">长按二维码绑定账号</p>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../static/m/js/common.js"></script>
+	<script type="text/javascript" src="../../static/m/js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="../../static/c/js/init.js"></script>
+	<script type="text/javascript" src="../../static/c/js/login.js"></script>
+</html>

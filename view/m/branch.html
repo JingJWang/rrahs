@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/branch.css?v=20171012" />
+	</head>
+	<body>
+		<header>
+			选择网点
+			<a href="javascript:history.go(-1);" class="head_pos"></a>
+		</header>
+		<form>
+			<div class="choose">
+				<p class="cho_sp img_a">选择网点</p>
+				<div class="cho_mess">
+					<span class="ch_pos">输入网点编号：</span>
+					<input type="text" placeholder="例京000001" class="ch_inp">
+				</div>
+				<div class="demand">网点编号查询</div>	
+			</div>
+			<div class="choose">
+				<p class="cho_sp img_b">收款人</p>
+				<div class="cho_mess">
+					<span class="ch_pos">姓名：</span>
+					<input type="text" placeholder="输入您的姓名" class="ch_inp">
+				</div>
+				<div class="cho_mess">
+					<span class="ch_pos">手机号码：</span>
+					<input type="text" placeholder="输入您的手机号码" class="ch_inp">
+				</div>
+			</div>
+			<div class="choose">
+				<p class="cho_sp img_b">回收总值</p>
+				<div class="cho_mess">
+					<span class="ch_pos">评估价格：</span>
+					<span class="cho_money">1356.00元</span>
+				</div>
+			</div>
+		</form>
+		<footer>
+			<a href="#" class="last_go">立即回收</a>
+		</footer>
+	</body>
+	<script>
+		window.onload=window.onresize=function(){
+			document.documentElement.style.fontSize=window.innerWidth/16+'px';
+		};
+	</script>
+</html>

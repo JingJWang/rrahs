@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>全部订单</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/distilllist.css" />
+	</head>
+	<body>
+		<div class="father">
+		<header>
+			<span class="head_span">提货记录</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a>
+		</header>
+		<span class="none_cont"></span>
+		{if $result neq ""}
+		<ul class="ul_tit top_ul">
+			<li class="li_tl">店长</li>
+			<li class="li_tl">门店名称</li>
+			<li class="li_tl">订单状态</li>
+			<li class="li_tl">入库时间</li>
+		</ul>
+		<ul class="ul_box">
+			{foreach $result as $key=>$val}
+				<li class="li_b flexb">
+					<span class="li_mem li_tl">{$val.name}</span>
+					<span class="li_listNum li_tl">{$val.address_name}</span>
+					<span class="li_num li_tl">{$val.distill_deed}</span>
+					<span class="li_num li_tl">{$val.distill_jointime}</span>
+				</li>		
+	 		{/foreach}
+	 	</ul>
+	 	{else}
+	 	<div class="nolist">暂无提货记录...</div>
+	 	{/if}
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script src="../../static/m/js/request_dislist.js"></script>
+</html>

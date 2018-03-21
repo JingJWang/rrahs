@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>店铺列表</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/earnlist.css?v=20171012" />
+	</head>
+	<body>
+		<header>
+			<span class="head_span">店铺列表</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a><!--javascript:history.go(-1);-->
+		</header>
+		<div class="tit marTop">
+			<p class="tit_con">员工姓名：<b class="userName">{$user.name|default:""}</b></p>
+			<p class="tit_con">员工编号：<b class="listNum">{$user.number|default:""}</b></p>
+			<a href="extractLogList" class="pos_se thp">提货记录</a>
+		</div>	
+		<h1 class="messlist">店铺列表</h1>
+		<ul class="tih">
+			<!--每一天为一个li-->
+			<li class="tih_li">
+				<!--所有订单标题-->
+				<p class="tih_tit">
+					<span class="tshop_p">店铺名称</span>
+					<span class="tshop_p tit_sshop">店铺地址</span>
+					<span class="tshop_p">存货数量</span>
+				</p>
+				<div class="tih_mess">
+				{if $list neq 0}
+				{foreach $list as $key=>$val}
+					<a href="extractList?id={$val.address_id}" class="tih_p">
+						<span class="tshop_p">{$val.address_name}</span>
+						<span class="tshop_p">{$val.address_address}</span>
+						<span class="tshop_p">{$val.total}</span>
+					</a>
+				{/foreach}
+				{/if}
+				</div>
+			</li>
+		</ul>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>全部订单</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/order.css?v=20171012" />
+	</head>
+	<body>
+		<div class="father">
+		<header>
+			<span class="head_span">全部订单</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a>
+		</header>
+		{if $result neq ""}
+		<div class="list_box next_listbox">
+			{foreach $result as $key=>$val}
+				<div class="list">
+	            	<a class="mobile" href="getOrderDetail?id={$val.gid}">
+		            	<span class="m_name">{$val.gname}</span>
+		            	<span class="m_ts">
+		            		{$status[$val.orderstu]}
+						</span>
+			 			<div class="pg_p">
+			 				<span class="pr_font">评估价格：</span>
+		 					<span class="price">￥{$val.price/100}</span>
+		 				</div>
+	 				</a>
+	 				<span class="time">
+		 				{if $val.constu neq -1 && $val.orderstu eq 1}
+	            			{$val.jointime|date_format:'%Y-%m-%d %H:%M:%S'}
+	            		{else if $val.constu eq -1 && $val.orderstu eq 1}
+	            			{$val.uptime|date_format:'%Y-%m-%d %H:%M:%S'}
+	            	   {else if $val.constu eq -1 && $val.orderstu eq 2}
+	            	        {$val.uptime|date_format:'%Y-%m-%d %H:%M:%S'}
+	            		{else if $val.orderstu eq 10}
+	            			{$val.dealtime|date_format:'%Y-%m-%d %H:%M:%S'}
+	            		{else if $val.orderstu eq 0 }
+	            			{$val.uptime|date_format:'%Y-%m-%d %H:%M:%S'}
+	            		{/if}
+					</span>
+					{if $val.orderstu neq 10}
+	 				<a class="canList" onclick="cancleOrder({$val.gid})">取消订单</a>
+	 				{/if}
+	 			</div>
+	 		{/foreach}
+	 	</div>
+	 	{else}
+	 	<div class="nolist">暂无订单信息...</div>
+	 	{/if}
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script src="../../static/m/js/request_list.js"></script>
+</html>

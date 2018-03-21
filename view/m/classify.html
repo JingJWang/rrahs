@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>选择属性</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css" />
+		<link rel="stylesheet" href="../../static/m/css/classify.css?v=10011" />
+	</head>
+	<body>
+		<div class="father">
+		<div class="header">
+			<span class="head_span">{$name}</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a>
+		</div>
+		<span class="title">定价评估</span>
+		{if $role eq $role_customer}
+		<form id="attr">
+			<!--单选-->
+			<input name="oid" type="hidden" value="{$id}" />
+			<input name="hideInp" type="hidden" class="sh_hideInp" value="" />
+			<input name="hideInpVal" type="hidden" class="sh_hideInpVal" value=""  />
+			{foreach $attr as $attkey=>$attname}
+				{if $model.$attkey.model!=2}
+					<div class="classify">
+						<p class="class_tit">{$model.$attkey.name}</p>
+						<input type="hidden" class="hiddenInp"  id="{$attkey}" name="{$attkey}" value=""/>																				
+						<div class="cont_a">
+						{foreach $attname as $ankey=>$anval}
+							<a name="{$anval}" data id="{$info[{$anval}]}" onclick="choose(this)" class="class_name">{$info[{$anval}]}</a>
+						{/foreach}
+						</div>
+					</div>
+				{else}<!--多选-->
+					<div class="clamore"><span class="class_tit">{$model.$attkey.name}<b>(可多选)</b></span>
+						<input type="hidden" class="hiddenInp"  id="{$attkey}" name="{$attkey}" value="" data-childName="" data-childNum=""/>
+						<input type="hidden" name="manycho" class="manyChoose" value="" data="">
+						<input type="hidden" name="manychoVal" class="manychoVal" value="">
+						<div class="cont_a">
+						{foreach $attname as $ankey=>$anval}
+							<a href="javascript:;" name="{$anval}" class="class_name" onclick="chooseMany(this);">{$info[{$anval}]}</a>
+						{/foreach}
+						</div>
+					</div>
+				{/if}
+			{/foreach}
+			<div class="footer">
+				<input type="button" onclick="checkCus()" class="lastBtn" value="查看定价" /> 
+			</div>
+		</form>
+		{else if $role eq $role_Clerk}
+		<form  id="attr">
+			<input type="hidden" class="oid" name="oid" value="{$oid}">
+			<input type="hidden" class="yuan_hideInp" value=""/>
+			<input name="hideInp" type="hidden" class="sh_hideInp" value=""/>
+			<input name="hideInpVal" type="hidden" class="sh_hideInpVal" value=""  />
+			{foreach $attr as $key=>$val}
+				{if $model.$key.model !=2}
+					<div class="classify">
+						<p class="class_tit">{$model.$key.name}</p>
+						<div class="cont_a">
+						  {foreach $val as $k=>$v}
+						  	{if in_array($v,$resAttr)}
+						  		<input type="hidden" class="hiddenInp"  name="{$key}" value="{$v}"/>
+						  		<a name="{$v}" id="{$info.$v}" onclick="choose_s(this);" class="class_name choHover">{$info.$v}</a>
+						  	{else}
+						  		<a name="{$v}" id="{$info.$v}" onclick="choose_s(this);" class="class_name">{$info.$v}</a>
+						  	{/if} 
+						   {/foreach} 
+						</div> 
+					</div>
+				 {else if $model.$key.model eq 2}
+					<div class="clamore">
+						<span class="class_tit">{$model.$key.name}<b>(可多选)</b></span>
+						<input type="hidden" class="hiddenInp"  id="{$key}" name="{$key}" value="" />
+						<input type="hidden" class="yuan_manyChoose" value="">
+						<input type="hidden" name="manycho" class="manyChoose" value="">
+						<input type="hidden" name="manychoVal" class="manychoVal" value="">
+						<div class="cont_a">
+						{foreach $val as $k=>$v}
+							<a href="javascript:;" name="{$v}" class="class_name {if in_array($v,$resAttr)} choHover{/if} " onclick="chooseMany(this);">{$info[{$v}]}</a>
+						{/foreach} 
+						</div>
+					</div> 
+				{/if}
+			{/foreach}
+			<div class="footer">
+				<input type="button" onclick="checkForm()" style="background:#30d3b6;color:$fff" class="lastBtn" value="查看定价" />
+			</div>
+		</form>
+		{/if}
+		</div>
+	</body>
+	<script src="../../static/m/js/classify.js"></script>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script src="../../static/m/js/request_classify.js"></script>
+	<script>
+	$(function(){
+		if({$role}=={$role_Clerk}){ 
+			//商户返回故障页面修改故障重新报价
+			//getOrderOne();
+			//多选隐藏域赋值
+			var moreArr = [];
+			var moreHtml = [];
+			$('.clamore .choHover').each(function(){
+				moreHtml += $(this).html()+',';
+				moreArr += $(this).attr('name')+',';
+			})
+			$('#other').val(moreArr);
+			$('.manyChoose').val(moreArr);
+			$('.manychoVal').val(moreHtml);
+			$('.yuan_manyChoose').val(moreArr);
+			//单选隐藏域赋值
+			var danArr = [];
+			var danHtml = [];
+			$('.classify .choHover').each(function(){
+				danHtml += $(this).html()+',';
+				danArr += $(this).attr('name')+',';
+			})
+			//$('.hiddenInp').val(moreArr);
+			$('.sh_hideInp').val(danArr);
+			$('.sh_hideInpVal').val(danHtml);
+			$('.yuan_hideInp').val(danArr);
+		}	
+	})
+	</script>
+</html>

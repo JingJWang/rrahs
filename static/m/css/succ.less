@@ -1,0 +1,115 @@
+.rem(@w:0px,@h:0px){
+    width: @w/2/20;
+    height: @h/2/20;
+}
+.font(@size:0px,@hg:0px){
+    font-size: @size/2/20;
+    line-height: @hg/2/20;
+}
+.pad(@pt:0px,@pr:0px,@pb:0px,@pl:0px){
+    padding-top: @pt/2/20;
+    padding-right: @pr/2/20;
+    padding-bottom: @pb/2/20;
+    padding-left: @pl/2/20; 
+}
+.mar(@mt:0px,@mr:0px,@mb:0px,@ml:0px){
+    margin-top: @mt/2/20;
+    margin-right: @mr/2/20;
+    margin-bottom: @mb/2/20;
+    margin-left: @ml/2/20; 
+}
+body{
+    background: #f9f8f4;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 1.25rem;
+  font-size: 0.65rem;
+  line-height: 1.25rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  text-align: center;
+  background: #fff;
+  z-index: 99;
+}
+.head_pos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0.375rem;
+  width: 0.425rem;
+  height: 1.25rem;
+  padding-left: 1rem;
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+  background-size: 0.425rem 1.25rem;
+  background-position: 1rem center;
+}
+.box{
+    padding-top: 180rem/40;
+    width: 16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.img{
+    .rem(93rem,98rem);
+    display: block;
+    background-image: url(../img/list_ucc.jpg);
+    background-size: 100% 100%;
+}
+.img_pay{
+    .rem(93rem,98rem);
+    display: block;
+    background-image: url(../img/chang_succ.jpg);
+    background-size: 100% 100%;
+}
+.statu{
+    height: 90rem/40;
+    line-height: 90rem/40;
+    font-size: 0.7rem;
+    color: #31302c;
+}
+.mess_stat{
+    color: #747371;
+    height: 30rem/40;
+    line-height: 30rem/40;
+    font-size: 0.58rem;
+}
+.btn{
+    padding-top: 100rem/40;
+    width: 16rem;
+}
+.btna{
+    .rem(240rem,70rem);
+    border: 5px;
+    display: block;
+    float: left;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 70rem/40;
+    font-size: 0.6rem;
+}
+.jixu{
+    color: #9b9a96;
+    border: solid 1px #9b9a96;
+    margin-left: 1.5rem;
+}
+.jixu:link{color: #9b9a96;}
+.jixu:hover{color: #9b9a96;}
+.jixu:visited{color: #9b9a96;}
+.jixu:active{color: #9b9a96;}
+.seelist{
+    color: #fff;
+    border: solid 1px #ff4e5e;
+    background: #ff4e5e;
+    margin-left: 35rem/40;
+}
+.seelist:link{color: #fff;}
+.seelist:hover{color: #fff;}
+.seelist:visited{color: #fff;}
+.seelist:active{color: #fff;}

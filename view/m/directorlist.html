@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title>店长订单列表</title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/directorlist.css" />
+	</head>
+	<body>
+		<header>
+			<span class="head_span">订单列表</span>
+			<a href="javascript:;" class="head_pos"></a><!--javascript:history.go(-1);-->
+		</header>
+		<div class="tit posi_t">
+			<p class="tit_con">昵称：<b class="userName">{if $user neq ""}{$user.name}{else}{/if}</b></p>
+			<p class="tit_con">编号：<b class="listNum">{if $user neq ""}{$user.number}{else}{/if}</b></p>
+			<a class="see_ewm" href="http://m.rrahs.com/m/user/createQRcode">点击查看我的二维码</a>
+		</div>		
+		<ul class="list_nav">
+			<li class="unfin {if $state eq unfinished}addNav{/if} wfin"><a href="orderSee?status=unfinished">未完成订单</a></li>
+			<li class="fin {if $state eq deal}addNav{/if} yfin"><a href="orderSee?status=deal">已完成订单</a></li>
+		</ul>
+		<!--所有订单-->
+		<div class="list">
+		{if $state eq unfinished}
+		   		{if $unfinished neq ""}
+					{foreach $unfinished as $k=>$v}
+						<!--未完成订单-->
+						<a href="getOrderDetail?id={$v.orderId}">
+						<div class="unfin wcon listTab">
+							<div class="unfinsh" >	
+									<div class="finMess">
+										<div class="f_phone newwa">
+											<p class="list_p">{$v.orderName}</p>
+											<p class="p_tit">订单名称</p>
+										</div>
+										<div class="f_money newwb">
+											<p class="list_p">￥{$v.orderPrice/100}</p>
+											<p class="p_tit">交易金额</p>
+										</div>
+										<div class="f_tc newwc">
+											<p class="list_p">{$v.orderDeal|date_format:'%m.%d'}</p>
+											<p class="p_tit">成交时间</p>
+										</div>
+										<div class="f_ratio newwd">
+											<p class="list_p">{$v.mName}</p>
+											<p class="p_tit">处理人</p>
+										</div>
+									</div>
+							</div>
+						</div></a>
+					{/foreach}
+					{else}
+					<div class="nolist">暂无此类订单...</div>
+					{/if}
+		  {/if}
+		 {if $state eq deal}
+				{if $deal neq ""}
+					{foreach $deal as $k=>$v}
+						<div class="l_a_father">
+							<span class="rad" data="{$v.orderId}" onclick="changeRad(this);"></span>
+							<a href="getOrderDetail?id={$v.orderId}" class="finCont">
+									<div class="finMess">
+										<div class="f_phone">
+											<p class="list_p">{$v.orderName}</p>
+											<p class="p_tit">订单名称</p>
+										</div>
+										<div class="f_money">
+											<p class="list_p">￥{$v.orderPrice/100}</p>
+											<p class="p_tit">交易金额</p>
+										</div>
+										<div class="f_tc">
+											<p class="list_p">{$v.orderDeal|date_format:'%m.%d'}</p>
+											<p class="p_tit">成交时间</p>
+										</div>
+										<div class="f_ratio">
+											<p class="list_p">{$v.mName}</p>
+											<p class="p_tit">处理人</p>
+										</div>
+									</div>
+							 </a>
+							 <input type="hidden" name="dealid[]" value="{$v.orderId}"/>
+						 </div>
+					{/foreach}
+				{else}
+					<!--没有订单显示-->
+					<div class="nolist">暂无此类订单...</div>
+				{/if}
+			{/if}
+			</div>
+			{if $state eq deal && $deal neq ''}
+			<div class="footer">
+				<span class="qx" onclick="changeAll(this);">全选</span>
+				<span class="last_btn">移交</span>
+			</div>
+			<input type="hidden" name="orderIdS" class="orderIdS">
+			<input type="hidden" name="shopOwnerId" class="shopOwnerId" value="{$user.userid}">
+			<input type="hidden" name="distillId" class="distillId">
+			<div class="shadow" style="display: none;">
+				<div class="shad">
+					<h1 class="yj">订单移交</h1>
+					<span class="close" onclick="hideshad();"></span>
+					<p class="num_yj">您要移交<span class="num">0</span>台</p>
+					<div class="goods">
+						<div class="good_top">
+							<span class="mem">提货员:</span>
+							<span class="crew_name"  onclick="showUl();"></span>
+							<span class="dsj"></span>
+						</div>
+						<ul class="crew_ul" style="display: none;">
+							
+						</ul>
+					</div>
+					<div class="last_foot">
+						<span class="sure" onclick="hideshad();orderTran();">确认</span>
+					</div>
+				</div>
+			</div>
+			{/if}
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+	<script src="../../static/m/js/directorlist.js"></script>
+	<script src="../../static/m/js/request_directorlist.js"></script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="../../static/m/css/public.css?v=20171012" />
+		<link rel="stylesheet" href="../../static/m/css/succ.css?v=20171012" />
+	</head>
+	<body>
+		<div class="father">
+		<header>
+			<span class="head_span">{$template.title}</span>
+			<a href="javascript:history.go(-1);" class="head_pos"></a>
+		</header>
+		<div class="box">
+			<span class="img"></span>
+			<p class="statu">{$template.error}</p>
+			<p class="mess_stat">{$template.msg}</p>
+			<div class="btn">
+				<a class="jixu btna" href="ShowBrand?id=1">继续回收</a>
+				<a class="seelist btna"  href="{$orderinfo}" >查看订单</a>
+			</div>
+		</div>
+		</div>
+	</body>
+	<script src="../../static/m/js/jquery-1.11.1.min.js"></script>
+	<script src="../../static/m/js/common.js"></script>
+	<script src="../../static/m/js/init.js"></script>
+</html>

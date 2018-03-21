@@ -1,0 +1,487 @@
+body {
+  background: #f9f8f4;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16rem;
+  height: 1.25rem;
+  font-size: 0.65rem;
+  line-height: 1.25rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  text-align: center;
+  background: #fff;
+  z-index: 99;
+}
+.head_pos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.6rem;
+  height: 2rem;
+  background-image: url(../img/back.jpg);
+  background-repeat: no-repeat;
+  background-size: 0.425rem 1.25rem;
+  background-position: center;	
+}
+.posi_t{
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin-top: 2rem;
+	z-index: 9;
+}
+.tit {
+  padding: 0.375rem 0;
+  width: 16rem;
+  background-color: #55dec0;
+}
+.tit_con {
+  display: block;
+  height: 1.05rem;
+  line-height: 1.05rem;
+  font-size: 0.56rem;
+  color: #fff;
+  text-indent: 0.875rem;
+}
+.tit_con b {
+  font-weight: normal;
+}
+.list_nav {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin-top:4.8rem;
+	z-index: 9;
+  width: 16rem;
+  height: 2rem;
+}
+.list_nav li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  text-align: center;
+  font-size: 0.6rem;
+  color: #313131;
+  background: #fff;
+}
+.addNav {
+  border-bottom: solid 2px #55dec0;
+}
+.nolist {
+  width: 16rem;
+  height: 3rem;
+  padding-top: 7.5rem;
+  background-image: url(../img/nolist.png);
+  background-size: 5rem 6.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  line-height: 3rem;
+  text-align: center;
+  color: #605f5d;
+  font-size: 0.58rem;
+}
+.unfinsh {
+  width: 15.425rem;
+  height: 1.5rem;
+  padding-top: 0.7rem;
+  padding-right: 0;
+  padding-bottom: 0.5rem;
+  padding-left: 0.575rem;
+  background: #fff;
+  margin-bottom: 2px;
+}
+.unfinsh:first-of-type {
+  margin-top: 5px;
+}
+.phone {
+  width: 6rem;
+  display: inline-block;
+}
+.money {
+  width: 5rem;
+  display: inline-block;
+}
+.ratio {
+  width: 4rem;
+  display: inline-block;
+}
+.list_p {
+  display: inline-block;
+  width: 90%;
+  height: 0.85rem;
+  line-height: 0.85rem;
+  color: #010101;
+  font-size: 0.58rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.p_tit {
+  display: inline-block;
+  width: 100%;
+  height: 0.65rem;
+  line-height: 0.65rem;
+  color: #757575;
+  font-size: 0.5rem;
+}
+.f_time {
+  display: block;
+  width: 16rem;
+  height: 1.625rem;
+  text-indent: 0.5rem;
+  line-height: 1.625rem;
+  color: #5c5b57;
+  font-size: 0.6rem;
+}
+.l_a_father{
+	width: 100%;
+	display: inline-block;
+	float: left;
+	background: #fff;
+	position: relative;
+  margin-bottom: 3px;
+  padding-top: 0.65rem;
+  padding-bottom: 0.5rem;
+}
+.l_a_father:last-of-type{
+	margin-bottom: 3rem;
+}
+.l_a_father:first-of-type{
+	margin-top: 5px;
+}
+.rad{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 1.7rem;
+	height: 2.8rem;
+	background-image: url(../img/radio.png);
+	background-position: center;
+	background-size: 0.85rem 0.85rem;
+	background-repeat: no-repeat;
+}
+.rad_check{
+	background-image: url(../img/radio_check.png);
+}
+.finCont {
+	display: block;
+  padding-left: 1.7rem;
+}
+.finCont:last-of-type {
+  margin-bottom: none;
+}
+.timer {
+  position: absolute;
+  top: 0.375rem;
+  left: 0;
+  margin-left: -0.4rem;
+  width: 3.5rem;
+  height: 0.875rem;
+  line-height: 0.875rem;
+  background: #ff6975;
+  border-radius: 15px;
+  padding-left: 1rem;
+  color: #fff;
+  font-size: 0.5rem;
+}
+.f_phone {
+  width: 5.2rem;
+}
+.f_money {
+  width: 3.1rem;
+}
+.f_tc {
+  width: 3rem;
+}
+.f_ratio {
+  width: 2.4rem;
+}
+.finMess div {
+  display: inline-block;
+}
+.list{
+	float: left;
+	width: 100%;
+	margin-top: 6.7rem;
+}
+.footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2rem;
+	background: #fff;
+	border-top:solid 1px #edecec; 
+}
+.qx{
+	display: inline-block;
+	padding-left: 1rem;
+	margin-left: 0.7rem;
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 0.58rem;
+	color: #666666;
+	background-image: url(../img/radio.png);
+	background-position: left center;
+	background-size: 0.85rem 0.85rem;
+	background-repeat: no-repeat;
+	float: left;
+}
+.qx_rad{
+	background-image: url(../img/radio_check.png);
+	background-position: left center;
+	background-size: 0.85rem 0.85rem;
+	background-repeat: no-repeat;
+	float: left;
+}
+.last_btn{
+	display: inline-block;
+	float: right;
+	width: 6rem;
+	height: 2rem;
+	background: #d0d0d0;
+	color: #fff;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 0.58rem;
+	letter-spacing: 1px;
+}
+.radChange{
+	background: #55dec0;
+	color: #fff;
+}
+.shadow{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,.5);
+	z-index: 100;
+}
+.shad{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -6.5rem;
+	margin-top: -6.5rem;
+	width: 13rem;
+	height: 13rem;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.yj{
+	width: 92%;
+	margin-left: 4%;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	color: #333;
+	font-size: 0.58rem;
+	border-bottom: solid 1px #f1f1f1;
+}
+.close{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 0.5rem;
+	width: 1.5rem;
+	height: 2rem;
+	background-image: url(../img/close.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 0.55rem 0.55rem;
+}
+.num_yj{
+	padding-top: 0.8rem;
+	line-height: 1rem;
+	font-size: 0.55rem;
+	padding-left: 1rem;
+	color: #313131;
+}
+.num_yj .num{
+	padding: 0 0.5rem 0 0.5rem;
+	color: red;
+	font-size: 0.58rem;
+}
+.goods{
+	padding-top: 0.5rem;
+	position: relative;
+	float: left;
+}
+.mem{
+	display: inline-block;
+	float: left;
+	padding-left: 1rem;
+	line-height: 1rem;
+	color: #444;
+	font-size: 0.55rem;
+}
+.crew_name{
+	display: inline-block;
+	float: left;
+	width: 4rem;
+	padding-left: 2rem;
+	height: 1rem;
+	margin-left: 0.5rem;
+	line-height: 1rem;
+	color: #444;
+	border: solid 1px #ccc;
+}
+.good_top{
+	position: relative;
+	float: left;
+}
+.dw_sj{
+	width: 1.5rem;
+	height: 1rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.dsj {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: 0.4rem;
+	margin-right: 0.5rem;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 7px solid #979797;
+}
+.crew_ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 1.6rem;
+    margin-left: 3.3rem;
+    height: 4rem;
+    overflow: auto;
+    width: 6rem;
+		border: solid 1px #ccc;
+		border-top: none;
+}
+.crew{
+	display: block;
+	width: 90%;
+	margin-left: 5%;
+	height: 1rem;
+	line-height: 1rem;
+	text-indent: 1.5rem;
+	border-bottom: solid 1px #f3f3f3;
+	color: #444;
+}
+.crew:last-of-type{
+	border: none;
+}
+.last_foot{
+	width: 100%;
+	height: 2.3rem;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	/*margin-top: 6rem;
+	float: left;*/
+}
+.sure{
+	width: 70%;
+	margin-left: 15%;
+	height: 1.6rem;
+	display: inline-block;
+	float: left;
+	line-height: 1.6rem;
+	text-align: center;
+	font-size: 0.58rem;
+	color: #fff;
+	background: #55dec0;
+	border-radius: 5px;
+}
+/*未完成订单宽*/
+.newwa{
+	width: 5.3rem;
+}
+.newwb{
+	width: 3.5rem;
+}
+.newwc{
+	width: 3.5rem;
+}
+.newwd{
+	width: 2.5rem;
+}
+.see_ewm{
+	display: block;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	border-bottom: solid 1px #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 1rem;
+	color: #fff;
+	font-size: 0.55rem;
+	margin-top: 1rem;
+}
+.see_ewm:link{color: #fff;}
+.see_ewm:hover{color: #fff;}
+.see_ewm:visited{color: #fff;}
+.see_ewm:active{color: #fff;}
+/*店铺详情*/
+.sjop_tit{
+    width: 92%;
+    padding: 0 3% 0 5%;
+    border-bottom: solid 1px #ededed;
+    display: flex;
+    background: #fff;
+    position: relative;
+}
+.shop_mess{
+    display: inline-block;
+    text-align: center;
+    font-size: 0.52rem;
+    flex: 3;
+    line-height: 2rem;
+} 
+.shop_mess:nth-child(2){
+	flex: 4;
+}
+.shop_mess:nth-child(1){
+	flex: 5;
+}
+.martop {
+  margin-top: 2.2rem;
+}  
+.radio_sp{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1.8rem;
+	height: 2rem;
+	background-image: url(../img/radio.png);
+	background-position:center;
+	background-size: 0.85rem 0.85rem;
+	background-repeat: no-repeat;
+}
+.check_sp{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1.8rem;
+	height: 2rem;
+	background-image: url(../img/radio_check.png);
+	background-position:center;
+	background-size: 0.85rem 0.85rem;
+	background-repeat: no-repeat;
+}
